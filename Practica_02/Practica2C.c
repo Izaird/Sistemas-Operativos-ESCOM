@@ -20,17 +20,19 @@ int main(){
         printf("\tMi proceso padre es: %d\n",getppid());
         printf("\tMi identificador es: %d\n\n",getpid());
       
-            for (int i = 0; i < 2; ++i)
-            {
+            for (int i = 0; i < 3; ++i)
+            {   
                PidHijos = fork();
                 if (PidHijos ==0)
                 {
                     printf("\t\tHola soy el proceso hijo del hijo, %d\n",i);
                     printf("\t\tMi proceso padre es: %d\n",getppid());
-                    printf("\t\tMi identificador es: %d\n\n",getpid());  
+                    printf("\t\tMi identificador es: %d\n\n",getpid()); 
+                    break; 
                 }
-                else
+                else{
                     wait(NULL);
+                }
             }
         }
     

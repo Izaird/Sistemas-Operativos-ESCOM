@@ -28,7 +28,7 @@ int main(){
                PidHijos = fork();
                 if (PidHijos ==0)
                 {
-                    printf("\t\tHola soy el proceso hijo del hijo, %d\n",i);
+                    printf("\t\tHola soy el proceso hijo del hijo, %d\n",i+1);
                     printf("\t\tMi proceso padre es: %d\n",getppid());
                     printf("\t\tMi identificador es: %d\n\n",getpid());
 
@@ -38,23 +38,23 @@ int main(){
                         PidHijos2 = fork();
                         if (PidHijos2 ==0)
                         {
-                            printf("\t\t\tHola soy el proceso hijo del hijo, %d\n",i);
+                            printf("\t\t\tHola soy el proceso hijo del hijo, %d\n",i+1);
                             printf("\t\t\tMi proceso padre es: %d\n",getppid());
                             printf("\t\t\tMi identificador es: %d\n\n",getpid()); 
-                            break;//Se utiliza un break para lograr que solo se creen los hijos necesarios 
+                            break;//Se utiliza un break para lograr que solo se ejecuten los hijos necesarios 
                         }
                         else
-                            wait(NULL); //wai
+                            wait(NULL); //wait que espera a los 2 hijos por cada hijo Creado Anterirormente
                     } 
                     break; 
                 }
                 else
-                    wait(NULL);
+                    wait(NULL);//wait Para Esperar los 3 hijos Creados
             }
         }
     
     else
-        wait(NULL);
+        wait(NULL);//wait para esperar el Hijo Creado
         
     return 0;
 }

@@ -12,7 +12,6 @@ int main(){
     
     //Impresion De los Datos del Proceso Padre Antes de Iniciar la Creacion de Hijos
     printf("Hola soy el padre\n");
-    printf("Mi proceso padre es: %d\n",getppid());
     printf("Mi identificador es: %d\n\n",getpid());
     
     //Inicio de la Creacion De Hijos

@@ -10,7 +10,7 @@ int main()
     { 
         if(fork() == 0) 
         { 
-            printf("Hola soy el proceso con pid:%d y mi padre es:%d\n",getpid(),getppid()); 
+            printf("Hola soy el proceso %d con pid:%d y mi padre es:%d\n",i+1,getpid(),getppid()); 
             exit(0); 
         } 
     } 

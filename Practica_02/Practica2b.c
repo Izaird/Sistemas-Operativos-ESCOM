@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <sys/wait.h>
 
-int foo(const char *ID);
+int foo(const char *ID);    
 
 int main()
 {
